@@ -1,0 +1,5 @@
+region                  = "eu-central-1"
+instance_type           = "t2.micro"
+ami_id                  = "ami-009082a6cd90ccd0e"
+subnet_id               = "subnet-0ad8d24fa58098735"
+EC2_name                = "TestEC2Instance"
