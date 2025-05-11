@@ -1,6 +1,7 @@
 resource "aws_security_group" "sg_ec2_static_web_server" {
   name        = "sg_ec2_static_web_server"
   description = "Allow HTTP, HTTPS, and SSH"
+  vpc_id      = "vpc-06d15575bd4a2194a"
 
   ingress {
     from_port   = 80
