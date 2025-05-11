@@ -17,16 +17,16 @@ resource "aws_instance" "app_server" {
   ami             = var.ami_id
   instance_type   = var.instance_type
   subnet_id       = var.subnet_id
-  security_groups = [aws_security_group.sg_ec2_static_web_server.name]
+  security_groups = [aws_security_group.sg_ec2_static_web_server.id]
 
   user_data = <<-EOF
               #!/bin/bash
               yum update -y
               yum install -y httpd git  # Install git and Apache HTTP server
 
-              # git clone https://github.com/yourusername/repo-name.git /tmp/repo
+              git clone https://github.com/yauhen-shulha/simpleStaticHtml.git /tmp/repo
 
-              # cp /tmp/repo/index.html /var/www/html/index.html
+              cp /tmp/repo/index.html /var/www/html/index.html
 
               systemctl start httpd
               systemctl enable httpd
