@@ -27,3 +27,9 @@ variable "EC2_name" {
   type        = string
   default     = "TestEc2"
 }
+
+variable "vpc_id" {
+  description = "vpc_id"
+  type        = string
+  default     = "vpc-06d15575bd4a2194a"
+}
