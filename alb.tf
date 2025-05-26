@@ -3,7 +3,7 @@ resource "aws_lb" "app_alb" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.sg_alb.id]
-  subnets            = [var.subnet_id, "subnet-0ee0794cf6825b0c6"]
+  subnets            = var.subnet_ids
 
   enable_deletion_protection = false
 }
