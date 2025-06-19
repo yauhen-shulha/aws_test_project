@@ -5,7 +5,7 @@ resource "aws_launch_template" "app_server" {
 
   network_interfaces {
     subnet_id       = var.subnet_id
-    security_groups = [aws_security_group.sg_alb.id]
+    security_groups = [aws_security_group.alb_sg.id]
   }
 
   user_data = base64encode(<<-EOF

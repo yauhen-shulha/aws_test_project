@@ -39,3 +39,14 @@ variable "subnet_ids" {
   type        = list(string)
   default     = ["subnet-0ad8d24fa58098735", "subnet-0ee0794cf6825b0c6"]
 }
+
+variable "my_ip" {
+  description = "My IP for SSH"
+  type        = string
+}
+
+variable "key_name" {
+  description = "Name of the SSH key pair"
+  type        = string
+  default     = "bastion-key"
+}
