@@ -3,10 +3,7 @@ resource "aws_launch_template" "app_server" {
   image_id      = var.ami_id
   instance_type = var.instance_type
 
-  network_interfaces {
-    subnet_id       = var.subnet_id
-    security_groups = [aws_security_group.alb_sg.id]
-  }
+  vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
   user_data = base64encode(<<-EOF
     #!/bin/bash
