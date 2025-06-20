@@ -16,7 +16,7 @@ provider "aws" {
 resource "aws_instance" "bastion" {
   ami                    = "ami-009082a6cd90ccd0e"
   instance_type          = "t2.micro"
-  subnet_id              = aws_subnet.public.id
+  subnet_id              = var.subnet_id
   key_name               = var.key_name
   vpc_security_group_ids = [aws_security_group.bastion_sg.id]
 
