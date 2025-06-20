@@ -28,6 +28,8 @@ jobs:
       run: terraform init
 
     - name: Terraform Plan
+      env:
+        TF_VAR_bastion_public_key: ${{ secrets.BASTION_PUBLIC_KEY }}
       run: terraform plan
 
     - name: Terraform Apply
