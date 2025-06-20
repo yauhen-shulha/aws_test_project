@@ -5,5 +5,5 @@ resource "tls_private_key" "bastion_key" {
 
 resource "aws_key_pair" "bastion_key" {
   key_name   = var.key_name
-  public_key = tls_private_key.bastion_key.public_key_openssh
+  public_key = file("~/.ssh/id_ed25519_additional.pub")
 }

@@ -3,8 +3,7 @@ output "alb_dns_name" {
   value       = aws_lb.app_alb.dns_name
 }
 
-output "bastion_private_key_pem" {
-  description = "Private key for SSH access to Bastion host"
-  value       = tls_private_key.bastion_key.private_key_pem
-  sensitive   = true
+output "bastion_public_dns" {
+  description = "Public DNS name of the Bastion host"
+  value       = aws_instance.bastion.public_dns
 }
