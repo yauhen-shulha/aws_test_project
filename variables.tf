@@ -50,3 +50,7 @@ variable "key_name" {
   type        = string
   default     = "bastion-key"
 }
+variable "bastion_public_key" {
+  description = "Public SSH key to use for bastion host"
+  type        = string
+}

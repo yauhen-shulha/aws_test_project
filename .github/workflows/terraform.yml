@@ -31,4 +31,6 @@ jobs:
       run: terraform plan
 
     - name: Terraform Apply
+      env:
+        TF_VAR_bastion_public_key: ${{ secrets.BASTION_PUBLIC_KEY }}
       run: terraform apply -auto-approve
